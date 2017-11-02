@@ -3,13 +3,19 @@ package VIEW;
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
+import javax.swing.DefaultListModel;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.JScrollPane;
+import javax.swing.JList;
 
 public class Finestra3 extends JFrame {
 
 	private JPanel contentPane;
+	private JScrollPane scrollPane;
+	private JList list;
+	private DefaultListModel mod;
 
 	/**
 	 * Launch the application.
@@ -35,8 +41,15 @@ public class Finestra3 extends JFrame {
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		scrollPane = new JScrollPane();
+		scrollPane.setBounds(10, 11, 414, 240);
+		contentPane.add(scrollPane);
+		
+		list = new JList();
+		scrollPane.setViewportView(list);
 	}
 
 }
