@@ -14,9 +14,9 @@ public class Client implements ActionListener{
 
 	@Override
 	public void actionPerformed(ActionEvent evt) {
-		if (evt.getSource()==){
+		/*if (evt.getSource()){
 			
-		}
+		}*/
 	}
 	
 }

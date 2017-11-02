@@ -107,6 +107,7 @@ public class Finestra2 extends JFrame {
 		panel_9 = new JPanel();
 		panel_9.setBounds(353, 355, 142, 123);
 		contentPane.add(panel_9);
+		
 	}
 
 }
