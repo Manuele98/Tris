@@ -34,6 +34,8 @@ public class Finestra2 extends JFrame {
 	private JButton btn_Invia;
 	private JPanel panel_Simbolo_Avversario;
 	private JLabel lbl_Titolo;
+	private JButton btnEsci;
+	private JLabel lblLabelNomeAvversario;
 
 	/**
 	 * Launch the application.
@@ -125,7 +127,7 @@ public class Finestra2 extends JFrame {
 		contentPane.add(lbl_Simbolo_Gioco);
 		
 		panel_Simbolo_Giocatore = new JPanel();
-		panel_Simbolo_Giocatore.setBounds(786, 159, 65, 65);
+		panel_Simbolo_Giocatore.setBounds(788, 159, 65, 65);
 		contentPane.add(panel_Simbolo_Giocatore);
 		
 		lbl_Avversario = new JLabel("Avversario -->");
@@ -136,11 +138,11 @@ public class Finestra2 extends JFrame {
 		
 		btn_Invia = new JButton("Invia");
 		btn_Invia.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		btn_Invia.setBounds(713, 448, 106, 23);
+		btn_Invia.setBounds(709, 448, 110, 35);
 		contentPane.add(btn_Invia);
 		
 		panel_Simbolo_Avversario = new JPanel();
-		panel_Simbolo_Avversario.setBounds(786, 293, 65, 65);
+		panel_Simbolo_Avversario.setBounds(788, 293, 65, 65);
 		contentPane.add(panel_Simbolo_Avversario);
 		
 		lbl_Titolo = new JLabel("Tris & Vinci");
@@ -148,6 +150,16 @@ public class Finestra2 extends JFrame {
 		lbl_Titolo.setFont(new Font("Lucida Calligraphy", Font.BOLD | Font.ITALIC, 40));
 		lbl_Titolo.setBounds(278, 35, 401, 51);
 		contentPane.add(lbl_Titolo);
+		
+		btnEsci = new JButton("Esci");
+		btnEsci.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		btnEsci.setBounds(709, 567, 110, 35);
+		contentPane.add(btnEsci);
+		
+		lblLabelNomeAvversario = new JLabel("");
+		lblLabelNomeAvversario.setHorizontalAlignment(SwingConstants.CENTER);
+		lblLabelNomeAvversario.setBounds(595, 362, 181, 35);
+		contentPane.add(lblLabelNomeAvversario);
 		
 	}
 
