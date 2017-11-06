@@ -22,15 +22,15 @@ public class Client implements ActionListener, MouseListener{
 		this.f2=f2;
 		f1.getBtn_Accedi().addActionListener(this);
 		f2.getBtn_Invia().addActionListener(this);
-		f2.getPanel_1().addMouseListener(this);
-		f2.getPanel_2().addMouseListener(this);
-		f2.getPanel_3().addMouseListener(this);
-		f2.getPanel_4().addMouseListener(this);
-		f2.getPanel_5().addMouseListener(this);
-		f2.getPanel_6().addMouseListener(this);
-		f2.getPanel_7().addMouseListener(this);
-		f2.getPanel_8().addMouseListener(this);
-		f2.getPanel_9().addMouseListener(this);
+		f2.getLbl_1().addMouseListener(this);
+		f2.getLbl_2().addMouseListener(this);
+		f2.getLbl_3().addMouseListener(this);
+		f2.getLbl_4().addMouseListener(this);
+		f2.getLbl_5().addMouseListener(this);
+		f2.getLbl_6().addMouseListener(this);
+		f2.getLbl_7().addMouseListener(this);
+		f2.getLbl_8().addMouseListener(this);
+		f2.getLbl_9().addMouseListener(this);
 	}
 
 	@Override
@@ -61,39 +61,39 @@ public class Client implements ActionListener, MouseListener{
 
 	@Override
 	public void mouseClicked(MouseEvent evt) {
-		if (evt.getSource()==f2.getPanel_1()) {
+		if (evt.getSource()==f2.getLbl_1()) {
 			System.out.println("Pannello 1 cliccato");
 			flag=true;
 		}
-		if (evt.getSource()==f2.getPanel_2()) {
+		if (evt.getSource()==f2.getLbl_2()) {
 			System.out.println("Pannello 2 cliccato");
 			flag=true;
 		}
-		if (evt.getSource()==f2.getPanel_3()) {
+		if (evt.getSource()==f2.getLbl_3()) {
 			System.out.println("Pannello 3 cliccato");
 			flag=true;
 		}
-		if (evt.getSource()==f2.getPanel_4()) {
+		if (evt.getSource()==f2.getLbl_4()) {
 			System.out.println("Pannello 4 cliccato");
 			flag=true;
 		}
-		if (evt.getSource()==f2.getPanel_5()) {
+		if (evt.getSource()==f2.getLbl_5()) {
 			System.out.println("Pannello 5 cliccato");
 			flag=true;
 		}
-		if (evt.getSource()==f2.getPanel_6()) {
+		if (evt.getSource()==f2.getLbl_6()) {
 			System.out.println("Pannello 6 cliccato");
 			flag=true;
 		}
-		if (evt.getSource()==f2.getPanel_7()) {
+		if (evt.getSource()==f2.getLbl_7()) {
 			System.out.println("Pannello 7 cliccato");
 			flag=true;
 		}
-		if (evt.getSource()==f2.getPanel_8()) {
+		if (evt.getSource()==f2.getLbl_8()) {
 			System.out.println("Pannello 8 cliccato");
 			flag=true;
 		}
-		if (evt.getSource()==f2.getPanel_9()) {
+		if (evt.getSource()==f2.getLbl_9()) {
 			System.out.println("Pannello 9 cliccato");
 			flag=true;
 		}

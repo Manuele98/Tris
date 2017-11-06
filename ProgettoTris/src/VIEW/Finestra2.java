@@ -36,6 +36,15 @@ public class Finestra2 extends JFrame {
 	private JLabel lbl_Titolo;
 	private JButton btnEsci;
 	private JLabel lblLabelNomeAvversario;
+	private JLabel lbl_1;
+	private JLabel lbl_2;
+	private JLabel lbl_3;
+	private JLabel lbl_4;
+	private JLabel lbl_5;
+	private JLabel lbl_6;
+	private JLabel lbl_7;
+	private JLabel lbl_8;
+	private JLabel lbl_9;
 
 	/**
 	 * Launch the application.
@@ -72,6 +81,11 @@ public class Finestra2 extends JFrame {
 		panel_1 = new JPanel();
 		panel_1.setBounds(41, 159, 142, 123);
 		contentPane.add(panel_1);
+		panel_1.setLayout(null);
+		
+		lbl_1 = new JLabel("");
+		lbl_1.setBounds(0, 0, 142, 123);
+		panel_1.add(lbl_1);
 		
 		panel_Nero_2_vert = new JPanel();
 		panel_Nero_2_vert.setBackground(Color.BLACK);
@@ -81,10 +95,20 @@ public class Finestra2 extends JFrame {
 		panel_3 = new JPanel();
 		panel_3.setBounds(384, 159, 142, 123);
 		contentPane.add(panel_3);
+		panel_3.setLayout(null);
+		
+		lbl_3 = new JLabel("");
+		lbl_3.setBounds(0, 0, 142, 123);
+		panel_3.add(lbl_3);
 		
 		panel_2 = new JPanel();
 		panel_2.setBounds(212, 159, 142, 123);
 		contentPane.add(panel_2);
+		panel_2.setLayout(null);
+		
+		lbl_2 = new JLabel("");
+		lbl_2.setBounds(0, 0, 142, 123);
+		panel_2.add(lbl_2);
 		
 		panel_Nero_1_orz = new JPanel();
 		panel_Nero_1_orz.setBackground(Color.BLACK);
@@ -94,6 +118,11 @@ public class Finestra2 extends JFrame {
 		panel_4 = new JPanel();
 		panel_4.setBounds(41, 314, 142, 123);
 		contentPane.add(panel_4);
+		panel_4.setLayout(null);
+		
+		lbl_4 = new JLabel("");
+		lbl_4.setBounds(0, 0, 142, 123);
+		panel_4.add(lbl_4);
 		
 		panel_Nero_2_orz = new JPanel();
 		panel_Nero_2_orz.setBackground(Color.BLACK);
@@ -103,22 +132,47 @@ public class Finestra2 extends JFrame {
 		panel_7 = new JPanel();
 		panel_7.setBounds(41, 469, 142, 123);
 		contentPane.add(panel_7);
+		panel_7.setLayout(null);
+		
+		lbl_7 = new JLabel("");
+		lbl_7.setBounds(0, 0, 142, 123);
+		panel_7.add(lbl_7);
 		
 		panel_5 = new JPanel();
 		panel_5.setBounds(212, 314, 142, 123);
 		contentPane.add(panel_5);
+		panel_5.setLayout(null);
+		
+		lbl_5 = new JLabel("");
+		lbl_5.setBounds(0, 0, 142, 123);
+		panel_5.add(lbl_5);
 		
 		panel_6 = new JPanel();
 		panel_6.setBounds(384, 314, 142, 123);
 		contentPane.add(panel_6);
+		panel_6.setLayout(null);
+		
+		lbl_6 = new JLabel("");
+		lbl_6.setBounds(0, 0, 142, 123);
+		panel_6.add(lbl_6);
 		
 		panel_8 = new JPanel();
 		panel_8.setBounds(212, 469, 142, 123);
 		contentPane.add(panel_8);
+		panel_8.setLayout(null);
+		
+		lbl_8 = new JLabel("");
+		lbl_8.setBounds(0, 0, 142, 123);
+		panel_8.add(lbl_8);
 		
 		panel_9 = new JPanel();
 		panel_9.setBounds(384, 469, 142, 123);
 		contentPane.add(panel_9);
+		panel_9.setLayout(null);
+		
+		lbl_9 = new JLabel("");
+		lbl_9.setBounds(0, 0, 142, 123);
+		panel_9.add(lbl_9);
 		
 		lbl_Simbolo_Gioco = new JLabel("Tu giochi con -->");
 		lbl_Simbolo_Gioco.setHorizontalAlignment(SwingConstants.CENTER);
@@ -163,78 +217,6 @@ public class Finestra2 extends JFrame {
 		
 	}
 
-	public JPanel getPanel_1() {
-		return panel_1;
-	}
-
-	public void setPanel_1(JPanel panel_1) {
-		this.panel_1 = panel_1;
-	}
-
-	public JPanel getPanel_3() {
-		return panel_3;
-	}
-
-	public void setPanel_3(JPanel panel_3) {
-		this.panel_3 = panel_3;
-	}
-
-	public JPanel getPanel_2() {
-		return panel_2;
-	}
-
-	public void setPanel_2(JPanel panel_2) {
-		this.panel_2 = panel_2;
-	}
-
-	public JPanel getPanel_4() {
-		return panel_4;
-	}
-
-	public void setPanel_4(JPanel panel_4) {
-		this.panel_4 = panel_4;
-	}
-
-	public JPanel getPanel_7() {
-		return panel_7;
-	}
-
-	public void setPanel_7(JPanel panel_7) {
-		this.panel_7 = panel_7;
-	}
-
-	public JPanel getPanel_5() {
-		return panel_5;
-	}
-
-	public void setPanel_5(JPanel panel_5) {
-		this.panel_5 = panel_5;
-	}
-
-	public JPanel getPanel_6() {
-		return panel_6;
-	}
-
-	public void setPanel_6(JPanel panel_6) {
-		this.panel_6 = panel_6;
-	}
-
-	public JPanel getPanel_8() {
-		return panel_8;
-	}
-
-	public void setPanel_8(JPanel panel_8) {
-		this.panel_8 = panel_8;
-	}
-
-	public JPanel getPanel_9() {
-		return panel_9;
-	}
-
-	public void setPanel_9(JPanel panel_9) {
-		this.panel_9 = panel_9;
-	}
-
 	public JPanel getPanel_Simbolo_Giocatore() {
 		return panel_Simbolo_Giocatore;
 	}
@@ -258,4 +240,77 @@ public class Finestra2 extends JFrame {
 	public void setPanel_Simbolo_Avversario(JPanel panel_Simbolo_Avversario) {
 		this.panel_Simbolo_Avversario = panel_Simbolo_Avversario;
 	}
+
+	public JLabel getLbl_1() {
+		return lbl_1;
+	}
+
+	public void setLbl_1(JLabel lbl_1) {
+		this.lbl_1 = lbl_1;
+	}
+
+	public JLabel getLbl_2() {
+		return lbl_2;
+	}
+
+	public void setLbl_2(JLabel lbl_2) {
+		this.lbl_2 = lbl_2;
+	}
+
+	public JLabel getLbl_3() {
+		return lbl_3;
+	}
+
+	public void setLbl_3(JLabel lbl_3) {
+		this.lbl_3 = lbl_3;
+	}
+
+	public JLabel getLbl_4() {
+		return lbl_4;
+	}
+
+	public void setLbl_4(JLabel lbl_4) {
+		this.lbl_4 = lbl_4;
+	}
+
+	public JLabel getLbl_5() {
+		return lbl_5;
+	}
+
+	public void setLbl_5(JLabel lbl_5) {
+		this.lbl_5 = lbl_5;
+	}
+
+	public JLabel getLbl_6() {
+		return lbl_6;
+	}
+
+	public void setLbl_6(JLabel lbl_6) {
+		this.lbl_6 = lbl_6;
+	}
+
+	public JLabel getLbl_7() {
+		return lbl_7;
+	}
+
+	public void setLbl_7(JLabel lbl_7) {
+		this.lbl_7 = lbl_7;
+	}
+
+	public JLabel getLbl_8() {
+		return lbl_8;
+	}
+
+	public void setLbl_8(JLabel lbl_8) {
+		this.lbl_8 = lbl_8;
+	}
+
+	public JLabel getLbl_9() {
+		return lbl_9;
+	}
+
+	public void setLbl_9(JLabel lbl_9) {
+		this.lbl_9 = lbl_9;
+	}
+		
 }
