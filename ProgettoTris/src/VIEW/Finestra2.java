@@ -13,6 +13,7 @@ import javax.swing.SwingConstants;
 import javax.swing.JButton;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import java.awt.SystemColor;
 
 public class Finestra2 extends JFrame {
 
@@ -40,26 +41,9 @@ public class Finestra2 extends JFrame {
 	private JLabel label_Simbolo_Giocatore;
 	private JLabel label_Simbolo_Avversario;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Finestra2 frame = new Finestra2();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
-	/**
-	 * Create the frame.
-	 */
 	public Finestra2() {
+		setBackground(Color.LIGHT_GRAY);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 950, 700);
 		contentPane = new JPanel();
@@ -123,14 +107,10 @@ public class Finestra2 extends JFrame {
 		
 		lbl_1 = new JLabel("");
 		lbl_1.setBounds(40, 159, 142, 123);
-		icon = new ImageIcon("Cerchio.png");     // istruzioni necessarie per far comparire l'immagine sul tris
-		lbl_1.setIcon(icon);                     // istruzioni necessarie per far comparire l'immagine sul tris
 		contentPane.add(lbl_1);
 		
 		lbl_2 = new JLabel("");
 		lbl_2.setBounds(212, 159, 142, 123);
-		icon = new ImageIcon("X.jpg");           // istruzioni necessarie per far comparire l'immagine sul tris
-		lbl_2.setIcon(icon);                     // istruzioni necessarie per far comparire l'immagine sul tris
 		contentPane.add(lbl_2);  
 		
 		lbl_3 = new JLabel("");
@@ -209,6 +189,10 @@ public class Finestra2 extends JFrame {
 
 	public JLabel getLbl_2() {
 		return lbl_2;
+	}
+
+	public JButton getBtnEsci() {
+		return btnEsci;
 	}
 
 	public void setLbl_2(JLabel lbl_2) {
