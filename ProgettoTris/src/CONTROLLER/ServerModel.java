@@ -6,8 +6,8 @@ import java.net.Socket;
 import java.util.ArrayList;
 
 public class ServerModel {
-	public static ArrayList<Socket> listaSocket = new ArrayList<Socket>();
-
+	//public static ArrayList<Socket> listaSocket = new ArrayList<Socket>();
+	
 	/**
 	 * Invio un messaggio a tutti
 	 * 
@@ -17,7 +17,8 @@ public class ServerModel {
 	 *            // Chi invia il messaggio
 	 */
 	public static void sendMessage(String message, Socket sender) {
-		for (int i = 0; i < listaSocket.size(); i++) {
+		
+		/*for (int i = 0; i < listaSocket.size(); i++) {
 			try {
 				Socket temp = listaSocket.get(i);
 				if (sender != temp) {
@@ -28,20 +29,20 @@ public class ServerModel {
 				// Nel caso ci sia qualche problema salta quel socket
 				e.printStackTrace();
 			}
-		}
+		}*/
 	}
-
+	
 	/**
 	 * Chiudo tutti i socket
 	 */
-	public static void close() {
+	/*public static void close() {
 		for (int i = 0; i < listaSocket.size(); i++) {
 			try {
-				listaSocket.get(i).close();
+			
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
-	}
+	}*/
 }

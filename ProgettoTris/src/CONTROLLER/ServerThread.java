@@ -30,7 +30,7 @@ public class ServerThread extends Thread {
 			// Leggo una riga e la interpreto
 			String messaggio = in.nextLine();
 			System.out.println("Il server ha ricevuto: " + messaggio + " ");
-
+			
 		}
 	}
 }
