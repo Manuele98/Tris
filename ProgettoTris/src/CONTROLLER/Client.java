@@ -19,8 +19,10 @@ public class Client implements ActionListener, MouseListener{
 	private Finestra2 f2;
 	private Persona p;
 	private int flag=0;						//Flag per controllare se l'utente ha selezionato una cella e se si quale
-	private boolean simbolo=true;			//Flag per tenere conto se utilizzare la "X" o il "O", true --> X false --> O
-	private String nomeServer;
+	private int simbolo=1;					//Flag per tenere conto se utilizzare la "X" o il "O", 1 --> "X" 2 --> "O"
+	private ImageIcon iconMia=null;
+	private ImageIcon iconAvversario=null;
+	private String nomeServer="localhost";
 	private int portaServer=6789;
 	private Socket s;
 	
@@ -39,6 +41,7 @@ public class Client implements ActionListener, MouseListener{
 		f2.getLbl_7().addMouseListener(this);
 		f2.getLbl_8().addMouseListener(this);
 		f2.getLbl_9().addMouseListener(this);
+		//this.connetti();
 	}
 	
 	public void connetti() {
@@ -49,7 +52,8 @@ public class Client implements ActionListener, MouseListener{
 		}
 	}
 	
-	public void comunica(int p) {
+	public void comunicaPosizione(int p) {
+		//Mandare STRINGHE
 		System.out.println("Invio al server...");
 		try {
 			s.getOutputStream().write(p);
@@ -72,39 +76,50 @@ public class Client implements ActionListener, MouseListener{
 		}
 		if (evt.getSource()==f2.getBtn_Invia()) {
 			if (flag>0) {
-				// Inviare al server la posizione selezionata
-				//this.comunica(flag);
+				//Capire da server che simbolo utilizzare
 				
-				//Manca if per decidere il simbolo
-				ImageIcon icon = new ImageIcon("Cerchio.png");
+				
+				// Inviare al server la posizione selezionata
+				//this.comunicaPosizione(flag);
+				
+				if(iconMia==null){
+					if(simbolo==0){
+						iconMia = new ImageIcon("Cerchio.png");
+						iconAvversario=new ImageIcon("X.jpg");
+					}
+					if(simbolo==1){
+						iconMia = new ImageIcon("X.jpg");
+						iconAvversario=new ImageIcon("Cerchio.png");
+					}
+				}
 				
 				switch (flag) {
 				case 1:
-					f2.getLbl_1().setIcon(icon);
+					f2.getLbl_1().setIcon(iconMia);
 					break;
 				case 2:
-					f2.getLbl_2().setIcon(icon);
+					f2.getLbl_2().setIcon(iconMia);
 					break;
 				case 3:
-					f2.getLbl_3().setIcon(icon);
+					f2.getLbl_3().setIcon(iconMia);
 					break;
 				case 4:
-					f2.getLbl_4().setIcon(icon);
+					f2.getLbl_4().setIcon(iconMia);
 					break;
 				case 5:
-					f2.getLbl_5().setIcon(icon);
+					f2.getLbl_5().setIcon(iconMia);
 					break;
 				case 6:
-					f2.getLbl_6().setIcon(icon);
+					f2.getLbl_6().setIcon(iconMia);
 					break;
 				case 7:
-					f2.getLbl_7().setIcon(icon);
+					f2.getLbl_7().setIcon(iconMia);
 					break;
 				case 8:
-					f2.getLbl_8().setIcon(icon);
+					f2.getLbl_8().setIcon(iconMia);
 					break;
 				case 9:
-					f2.getLbl_9().setIcon(icon);
+					f2.getLbl_9().setIcon(iconMia);
 					break;
 				}
 				
