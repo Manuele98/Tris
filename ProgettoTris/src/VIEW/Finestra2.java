@@ -143,14 +143,10 @@ public class Finestra2 extends JFrame {
 		
 		label_Simbolo_Giocatore = new JLabel("");
 		label_Simbolo_Giocatore.setBounds(786, 164, 65, 65);
-		icon2 = new ImageIcon("Cerchio_piccolo.png");     //istruzioni necessarie per far comparire l'immagine piccola
-		label_Simbolo_Giocatore.setIcon(icon2);           //istruzioni necessarie per far comparire l'immagine piccola
 		contentPane.add(label_Simbolo_Giocatore);
 		
 		label_Simbolo_Avversario = new JLabel("");
 		label_Simbolo_Avversario.setBounds(786, 302, 65, 65);
-		icon2 = new ImageIcon("X_piccolo.jpg");        //istruzioni necessarie per far comparire l'immagine piccola
-		label_Simbolo_Avversario.setIcon(icon2);       //istruzioni necessarie per far comparire l'immagine piccola
 		contentPane.add(label_Simbolo_Avversario);
 		
 	}
@@ -185,6 +181,10 @@ public class Finestra2 extends JFrame {
 
 	public void setLbl_1(JLabel lbl_1) {
 		this.lbl_1 = lbl_1;
+	}
+
+	public JLabel getLbl_Avversario() {
+		return lbl_Avversario;
 	}
 
 	public JLabel getLbl_2() {
