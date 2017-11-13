@@ -69,40 +69,51 @@ public class Server implements ActionListener {
 
 	public void partita() throws IOException {
 		Boolean partita = true;
-		Boolean vittoria = false;
 		while (partita == true) {
 			if (vittoria == false) {
 				messaggio1 = in1.nextLine();
 				switch (messaggio1) {
 				case "1":
 					pos1 = "X";
+					out2.println(pos1);
 					break;
 				case "2":
 					pos2 = "X";
+					out2.println(pos2);
 					break;
 				case "3":
 					pos3 = "X";
+					out2.println(pos3);
 					break;
 				case "4":
 					pos4 = "X";
+					out2.println(pos4);
 					break;
 				case "5":
 					pos5 = "X";
+					out2.println(pos5);
 					break;
 				case "6":
 					pos7 = "X";
+					out2.println(pos6);
 					break;
 				case "7":
 					pos7 = "X";
+					out2.println(pos7);
 					break;
 				case "8":
 					pos8 = "X";
+					out2.println(pos8);
 					break;
 				case "9":
 					pos9 = "X";
+					out2.println(pos9);
 					break;
 				case "Esci":
 					socket1.close();
+					out2.println("Hai vinto");
+					f3.setMod("-> Socket1 chiuso, partita annullata. Vittoria socket2(Cerchio)");
+					partita=false;
 					break;
 				default:
 					f3.setMod("Errore ricezione!");
@@ -111,46 +122,55 @@ public class Server implements ActionListener {
 			}
 			Controllo_vittoria();
 			if (vittoria == false) {
-
 				messaggio2 = in2.nextLine();
 				switch (messaggio2) {
 				case "1":
 					pos1 = "Cerchio";
+					out1.println(pos1);
 					break;
 				case "2":
 					pos2 = "Cerchio";
+					out1.println(pos2);
 					break;
 				case "3":
 					pos3 = "Cerchio";
+					out1.println(pos2);
 					break;
 				case "4":
 					pos4 = "Cerchio";
+					out1.println(pos4);
 					break;
 				case "5":
 					pos5 = "Cerchio";
+					out1.println(pos5);
 					break;
 				case "6":
-					pos7 = "Cerchio";
+					pos6 = "Cerchio";
+					out1.println(pos6);
 					break;
 				case "7":
 					pos7 = "Cerchio";
+					out1.println(pos7);
 					break;
 				case "8":
 					pos8 = "Cerchio";
+					out1.println(pos8);
 					break;
 				case "9":
 					pos9 = "Cerchio";
+					out1.println(pos9);
 					break;
 				case "Esci":
 					socket2.close();
-					f3.setMod("-> Socket2 chiuso, partita annullata");
+					out1.println("Hai vinto");
+					f3.setMod("-> Socket2 chiuso, partita annullata. Vittoria socket1(X)");
+					partita=false;
 					break;
 				default:
 					f3.setMod("Errore ricezione!");
 					break;
 				}
 			}
-
 			Controllo_vittoria();
 			if(vittoria==true){
 				if (vittorioso.equals("X")) {
@@ -165,9 +185,20 @@ public class Server implements ActionListener {
 			}
 			partita = false;
 		}
+		if(socket1.isClosed()==false&&socket2.isClosed()==false){
+			socket1.close();
+			socket2.close();
+		}else{
+			if(socket1.isClosed()==true&&socket2.isClosed()==false){
+				socket2.close();
+			}
+			if(socket1.isClosed()==false&&socket2.isClosed()==true){
+				socket1.close();
+			}
+		}			
 		vittoria = false;
 		vittorioso = "";
-		start();
+		richiesta_socket();
 	}
 
 	public void Controllo_vittoria() {
