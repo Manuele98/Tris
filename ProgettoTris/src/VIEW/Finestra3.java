@@ -52,12 +52,12 @@ public class Finestra3 extends JFrame {
 		
 		list = new JList();
 		scrollPane.setViewportView(list);
-		list.setModel(mod);
 		
 		btnSpegniServer = new JButton("Spegni server");
 		btnSpegniServer.setBounds(220, 310, 128, 34);
 		contentPane.add(btnSpegniServer);
 		mod=new DefaultListModel();
+		list.setModel(mod);
 	}
 
 	public DefaultListModel getMod() {

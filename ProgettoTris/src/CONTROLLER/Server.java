@@ -23,6 +23,9 @@ public class Server implements ActionListener {
 	Boolean chiuso = false;
 	Boolean vittoria = false;
 
+	public Server() throws IOException{
+		start();
+	}
 	public void start() throws IOException {
 
 		f3.getBtnSpegniServer().addActionListener(this);
