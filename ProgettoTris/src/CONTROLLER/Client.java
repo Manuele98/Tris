@@ -46,8 +46,8 @@ public class Client implements ActionListener, MouseListener{
 		f2.getLbl_7().addMouseListener(this);
 		f2.getLbl_8().addMouseListener(this);
 		f2.getLbl_9().addMouseListener(this);
-		//connetti();
-		//simbolo=simboloServer();
+		connetti();
+		simbolo=simboloServer();
 		if(simbolo.equals("1")){
 			iconMia = new ImageIcon("X.jpg");
 			iconAvversario=new ImageIcon("Cerchio.png");

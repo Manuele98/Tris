@@ -26,11 +26,8 @@ public class ServerThread extends Thread {
 	}
 
 	public void run() {
-		while (true) {
-			// Leggo una riga e la interpreto
-			String messaggio = in.nextLine();
-			System.out.println("Il server ha ricevuto: " + messaggio + " ");
+		/*while (true) {
 			
-		}
+		}*/
 	}
 }
