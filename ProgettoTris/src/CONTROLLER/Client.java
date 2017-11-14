@@ -59,6 +59,7 @@ public class Client implements ActionListener, MouseListener{
 			iconAvversario=new ImageIcon("X.jpg");
 			f2.getLabel_Simbolo_Giocatore().setIcon(new ImageIcon("Cerchio_piccolo.png"));
 			f2.getLabel_Simbolo_Avversario().setIcon(new ImageIcon("X_piccolo.jpg"));
+			f2.getBtn_Invia().setEnabled(false);
 		}
 	}
 	
@@ -75,8 +76,8 @@ public class Client implements ActionListener, MouseListener{
 		try {
 			InputStreamReader isr= new InputStreamReader(s.getInputStream());
 			BufferedReader in=new BufferedReader(isr);
-			System.out.println("Il Client riceve: " + in.readLine());
 			sim=in.readLine();
+			System.out.println("Il Client riceve simbolo: " + sim);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -95,6 +96,7 @@ public class Client implements ActionListener, MouseListener{
 	public String riceviPosizione (){
 		String p=null;
 		try {
+			System.out.println("Metodo ricevi posizione");
 			InputStreamReader isr= new InputStreamReader(s.getInputStream());
 			BufferedReader in=new BufferedReader(isr);
 			System.out.println("Il Client riceve posizione: " + in.readLine());
@@ -180,15 +182,15 @@ public class Client implements ActionListener, MouseListener{
 					f2.getLbl_9().removeMouseListener(this);
 					break;
 				}
-				//comunicaPosizione(flag);
+				System.out.println("Prima");
 				f2.getBtn_Invia().setEnabled(false);
 				flag=null;
 			}
 			else {
 				JOptionPane.showMessageDialog(f2, "Seleziona un pannello", "ERRORE", 0);
 			}
-		//	pAvversario=riceviPosizione();
-		//	f2.getBtn_Invia().setEnabled(true);
+			pAvversario=riceviPosizione();
+			f2.getBtn_Invia().setEnabled(true);
 			switch (pAvversario) {
 			case "1":
 				f2.getLbl_1().setIcon(iconAvversario);
