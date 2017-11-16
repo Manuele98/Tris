@@ -183,12 +183,14 @@ public class Client implements ActionListener, MouseListener{
 					break;
 				}
 				System.out.println("Prima");
+				comunicaPosizione(flag);
 				f2.getBtn_Invia().setEnabled(false);
 				flag=null;
 			}
 			else {
 				JOptionPane.showMessageDialog(f2, "Seleziona un pannello", "ERRORE", 0);
 			}
+			f2.repaint();
 			pAvversario=riceviPosizione();
 			f2.getBtn_Invia().setEnabled(true);
 			switch (pAvversario) {
