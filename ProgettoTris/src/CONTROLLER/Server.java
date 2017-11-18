@@ -19,12 +19,12 @@ public class Server implements ActionListener {
 	PrintWriter out2;
 	Scanner in1;
 	Scanner in2;
-	String messaggio1, messaggio2, pos1, pos2, pos3, pos4, pos5, pos6, pos7, pos8, pos9, vittorioso;
+	String messaggio1="", messaggio2="", pos1="", pos2="", pos3="", pos4="", pos5="", pos6="", pos7="", pos8="", pos9="", vittorioso="";
 	Boolean chiuso = false;
 	Boolean vittoria = false;
 
 	public Server() throws IOException{
-		start();
+		this.start();
 	}
 	public void start() throws IOException {
 
@@ -67,7 +67,7 @@ public class Server implements ActionListener {
 		// invio 2, che significa che il 2° socket ha cerchio
 		out2.println("2");
 		f3.setMod("-> Socket1: X Socket2: Cerchio");
-		partita();
+		this.partita();
 	}
 
 	public void partita() throws IOException {
@@ -78,39 +78,39 @@ public class Server implements ActionListener {
 				switch (messaggio1) {
 				case "1":
 					pos1 = "X";
-					out2.println(pos1);
+					out2.println("1");
 					break;
 				case "2":
 					pos2 = "X";
-					out2.println(pos2);
+					out2.println("2");
 					break;
 				case "3":
 					pos3 = "X";
-					out2.println(pos3);
+					out2.println("3");
 					break;
 				case "4":
 					pos4 = "X";
-					out2.println(pos4);
+					out2.println("4");
 					break;
 				case "5":
 					pos5 = "X";
-					out2.println(pos5);
+					out2.println("5");
 					break;
 				case "6":
 					pos7 = "X";
-					out2.println(pos6);
+					out2.println("6");
 					break;
 				case "7":
 					pos7 = "X";
-					out2.println(pos7);
+					out2.println("7");
 					break;
 				case "8":
 					pos8 = "X";
-					out2.println(pos8);
+					out2.println("8");
 					break;
 				case "9":
 					pos9 = "X";
-					out2.println(pos9);
+					out2.println("9");
 					break;
 				case "Esci":
 					socket1.close();
@@ -123,7 +123,7 @@ public class Server implements ActionListener {
 					break;
 				}
 			}
-			Controllo_vittoria();
+			this.Controllo_vittoria();
 			if (vittoria == false) {
 				messaggio2 = in2.nextLine();
 				switch (messaggio2) {
@@ -174,7 +174,7 @@ public class Server implements ActionListener {
 					break;
 				}
 			}
-			Controllo_vittoria();
+			this.Controllo_vittoria();
 			if(vittoria==true){
 				if (vittorioso.equals("X")) {
 					out1.println("Hai vinto");
@@ -185,6 +185,7 @@ public class Server implements ActionListener {
 					out1.println("Hai perso");
 					f3.setMod("Socket2 (Cerchio) ha vinto!!!");
 				}
+				f3.setMod(""+vittorioso+"  Vittoria:"+vittoria);
 			}
 			partita = false;
 		}
@@ -201,11 +202,11 @@ public class Server implements ActionListener {
 		}			
 		vittoria = false;
 		vittorioso = "";
-		richiesta_socket();
+		this.richiesta_socket();
 	}
 
 	public void Controllo_vittoria() {
-		if (pos1.equals(pos2) && pos1.equals(pos3)) {
+		if (pos1.equals(pos2) && pos1.equals(pos3)&&!pos1.equals("")) {
 			vittoria = true;
 			if (pos1.equals("X")) {
 				vittorioso = "X";
@@ -213,7 +214,7 @@ public class Server implements ActionListener {
 				vittorioso = "Cerchio";
 			}
 		}
-		if (pos4.equals(pos5) && pos4.equals(pos6)) {
+		if (pos4.equals(pos5) && pos4.equals(pos6)&&!pos4.equals("")) {
 			vittoria = true;
 			if (pos4.equals("X")) {
 				vittorioso = "X";
@@ -221,7 +222,7 @@ public class Server implements ActionListener {
 				vittorioso = "Cerchio";
 			}
 		}
-		if (pos7.equals(pos8) && pos7.equals(pos9)) {
+		if (pos7.equals(pos8) && pos7.equals(pos9)&&!pos7.equals("")) {
 			vittoria = true;
 			if (pos7.equals("X")) {
 				vittorioso = "X";
@@ -229,7 +230,7 @@ public class Server implements ActionListener {
 				vittorioso = "Cerchio";
 			}
 		}
-		if (pos1.equals(pos5) && pos1.equals(pos9)) {
+		if (pos1.equals(pos5) && pos1.equals(pos9)&&!pos1.equals("")) {
 			vittoria = true;
 			if (pos1.equals("X")) {
 				vittorioso = "X";
@@ -237,7 +238,7 @@ public class Server implements ActionListener {
 				vittorioso = "Cerchio";
 			}
 		}
-		if (pos3.equals(pos5) && pos3.equals(pos7)) {
+		if (pos3.equals(pos5) && pos3.equals(pos7)&&!pos3.equals("")) {
 			vittoria = true;
 			if (pos3.equals("X")) {
 				vittorioso = "X";
@@ -245,7 +246,7 @@ public class Server implements ActionListener {
 				vittorioso = "Cerchio";
 			}
 		}
-		if (pos1.equals(pos4) && pos1.equals(pos7)) {
+		if (pos1.equals(pos4) && pos1.equals(pos7)&&!pos1.equals("")) {
 			vittoria = true;
 			if (pos1.equals("X")) {
 				vittorioso = "X";
@@ -253,7 +254,7 @@ public class Server implements ActionListener {
 				vittorioso = "Cerchio";
 			}
 		}
-		if (pos2.equals(pos5) && pos2.equals(pos8)) {
+		if (pos2.equals(pos5) && pos2.equals(pos8)&&!pos2.equals("")) {
 			vittoria = true;
 			if (pos2.equals("X")) {
 				vittorioso = "X";
@@ -261,7 +262,7 @@ public class Server implements ActionListener {
 				vittorioso = "Cerchio";
 			}
 		}
-		if (pos3.equals(pos6) && pos3.equals(pos9)) {
+		if (pos3.equals(pos6) && pos3.equals(pos9)&&!pos3.equals("")) {
 			vittoria = true;
 			if (pos3.equals("X")) {
 				vittorioso = "X";
