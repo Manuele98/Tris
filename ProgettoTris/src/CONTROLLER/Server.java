@@ -75,6 +75,7 @@ public class Server implements ActionListener {
 		while (partita == true) {
 			if (vittoria == false) {
 				messaggio1 = in1.nextLine();
+				System.out.println("Ricevo messaggio1= " + messaggio1);
 				switch (messaggio1) {
 				case "1":
 					pos1 = "X";
@@ -135,51 +136,52 @@ public class Server implements ActionListener {
 			this.Controllo_vittoria();
 			if (vittoria == false) {
 				messaggio2 = in2.nextLine();
+				System.out.println("Ricevo messaggio2= " + messaggio2);
 				switch (messaggio2) {
 				case "1":
 					pos1 = "Cerchio";
 					System.out.println("Invio al client 1 pos1");
-					out1.println(pos1);
+					out1.println("1");
 					break;
 				case "2":
 					pos2 = "Cerchio";
 					System.out.println("Invio al client 1 pos2");
-					out1.println(pos2);
+					out1.println("2");
 					break;
 				case "3":
 					pos3 = "Cerchio";
 					System.out.println("Invio al client 1 pos3");
-					out1.println(pos2);
+					out1.println("3");
 					break;
 				case "4":
 					pos4 = "Cerchio";
 					System.out.println("Invio al client 1 pos4");
-					out1.println(pos4);
+					out1.println("4");
 					break;
 				case "5":
 					pos5 = "Cerchio";
 					System.out.println("Invio al client 1 pos5");
-					out1.println(pos5);
+					out1.println("5");
 					break;
 				case "6":
 					pos6 = "Cerchio";
 					System.out.println("Invio al client 1 pos6");
-					out1.println(pos6);
+					out1.println("6");
 					break;
 				case "7":
 					pos7 = "Cerchio";
 					System.out.println("Invio al client 1 pos7");
-					out1.println(pos7);
+					out1.println("7");
 					break;
 				case "8":
 					pos8 = "Cerchio";
 					System.out.println("Invio al client 1 pos8");
-					out1.println(pos8);
+					out1.println("8");
 					break;
 				case "9":
 					pos9 = "Cerchio";
 					System.out.println("Invio al client 1 pos9");
-					out1.println(pos9);
+					out1.println("9");
 					break;
 				case "Esci":
 					socket2.close();

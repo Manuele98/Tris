@@ -61,6 +61,14 @@ public class Client implements ActionListener, MouseListener{
 			f2.getLabel_Simbolo_Avversario().setIcon(new ImageIcon("X_piccolo.jpg"));
 			f2.getBtn_Invia().setEnabled(false);
 		}
+		partita();
+	}
+	public void partita() {
+		if (!f2.getBtn_Invia().isEnabled()) {					//Se sono CERCHIO
+			System.out.println("Ramo Client pulsante non attivato");
+			riceviPosizione();
+			f2.getBtn_Invia().setEnabled(true);
+		}
 	}
 	
 	public void connetti() {
@@ -85,7 +93,7 @@ public class Client implements ActionListener, MouseListener{
 	}
 	
 	public void comunicaPosizione(String p) {
-		System.out.println("Invio al server...");
+		System.out.println("Invio al server posizione " + p + "...");
 		try {
 			PrintWriter out=new PrintWriter(s.getOutputStream(), true);
 			out.println(p);
@@ -93,18 +101,57 @@ public class Client implements ActionListener, MouseListener{
 			e.printStackTrace();
 		}
 	}
-	public String riceviPosizione (){
+	public void riceviPosizione (){
 		String p=null;
 		try {
 			System.out.println("Metodo ricevi posizione");
 			InputStreamReader isr= new InputStreamReader(s.getInputStream());
 			BufferedReader in=new BufferedReader(isr);
-			System.out.println("Il Client riceve posizione: " + in.readLine());
 			p=in.readLine();
+			System.out.println("Il Cliet riceve posizione: " + p);
+			switch (p) {
+			case "1":
+				f2.getLbl_1().setIcon(iconAvversario);
+				f2.getLbl_1().removeMouseListener(this);
+				break;
+			case "2":
+				f2.getLbl_2().setIcon(iconAvversario);
+				f2.getLbl_2().removeMouseListener(this);
+				break;
+			case "3":
+				f2.getLbl_3().setIcon(iconAvversario);
+				f2.getLbl_3().removeMouseListener(this);
+				break;
+			case "4":
+				f2.getLbl_4().setIcon(iconAvversario);
+				f2.getLbl_4().removeMouseListener(this);
+				break;
+			case "5":
+				f2.getLbl_5().setIcon(iconAvversario);
+				f2.getLbl_5().removeMouseListener(this);
+				break;
+			case "6":
+				f2.getLbl_6().setIcon(iconAvversario);
+				f2.getLbl_6().removeMouseListener(this);
+				break;
+			case "7":
+				f2.getLbl_7().setIcon(iconAvversario);
+				f2.getLbl_7().removeMouseListener(this);
+				break;
+			case "8":
+				f2.getLbl_8().setIcon(iconAvversario);
+				f2.getLbl_8().removeMouseListener(this);
+				break;
+			case "9":
+				f2.getLbl_9().setIcon(iconAvversario);
+				f2.getLbl_9().removeMouseListener(this);
+				break;
+			//case "Hai vinto":
+			}
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		return p;
+		
 	}
 	public void esci(){
 		System.out.println("Invio al server...");
@@ -182,57 +229,14 @@ public class Client implements ActionListener, MouseListener{
 					f2.getLbl_9().removeMouseListener(this);
 					break;
 				}
-				System.out.println("Prima");
-				comunicaPosizione(flag);
 				f2.getBtn_Invia().setEnabled(false);
+				comunicaPosizione(flag);
+				System.out.println("CAMBIO");
 				flag=null;
+				partita();
 			}
 			else {
 				JOptionPane.showMessageDialog(f2, "Seleziona un pannello", "ERRORE", 0);
-			}
-			f2.repaint();
-			pAvversario=riceviPosizione();
-			f2.getBtn_Invia().setEnabled(true);
-			switch (pAvversario) {
-			case "1":
-				f2.getLbl_1().setIcon(iconAvversario);
-				f2.getLbl_1().removeMouseListener(this);
-				break;
-			case "2":
-				f2.getLbl_2().setIcon(iconAvversario);
-				f2.getLbl_2().removeMouseListener(this);
-				break;
-			case "3":
-				f2.getLbl_3().setIcon(iconAvversario);
-				f2.getLbl_3().removeMouseListener(this);
-				break;
-			case "4":
-				f2.getLbl_4().setIcon(iconAvversario);
-				f2.getLbl_4().removeMouseListener(this);
-				break;
-			case "5":
-				f2.getLbl_5().setIcon(iconAvversario);
-				f2.getLbl_5().removeMouseListener(this);
-				break;
-			case "6":
-				f2.getLbl_6().setIcon(iconAvversario);
-				f2.getLbl_6().removeMouseListener(this);
-				break;
-			case "7":
-				f2.getLbl_7().setIcon(iconAvversario);
-				f2.getLbl_7().removeMouseListener(this);
-				break;
-			case "8":
-				f2.getLbl_8().setIcon(iconAvversario);
-				f2.getLbl_8().removeMouseListener(this);
-				break;
-			case "9":
-				f2.getLbl_9().setIcon(iconAvversario);
-				f2.getLbl_9().removeMouseListener(this);
-				break;
-			}
-			if(controllaVittoria()==true){
-				JOptionPane.showMessageDialog(f2, "Hai vinto", "BRAVO", 0);
 			}
 		}
 		if (evt.getSource()==f2.getBtnEsci()){
