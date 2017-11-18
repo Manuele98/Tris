@@ -78,38 +78,47 @@ public class Server implements ActionListener {
 				switch (messaggio1) {
 				case "1":
 					pos1 = "X";
+					System.out.println("Invio al client 2 pos1");
 					out2.println("1");
 					break;
 				case "2":
 					pos2 = "X";
+					System.out.println("Invio al client 2 pos2");
 					out2.println("2");
 					break;
 				case "3":
 					pos3 = "X";
+					System.out.println("Invio al client 2 pos3");
 					out2.println("3");
 					break;
 				case "4":
 					pos4 = "X";
+					System.out.println("Invio al client 2 pos4");
 					out2.println("4");
 					break;
 				case "5":
 					pos5 = "X";
+					System.out.println("Invio al client 2 pos5");
 					out2.println("5");
 					break;
 				case "6":
-					pos7 = "X";
+					pos6 = "X";
+					System.out.println("Invio al client 2 pos6");
 					out2.println("6");
 					break;
 				case "7":
 					pos7 = "X";
+					System.out.println("Invio al client 2 pos7");
 					out2.println("7");
 					break;
 				case "8":
 					pos8 = "X";
+					System.out.println("Invio al client 2 pos8");
 					out2.println("8");
 					break;
 				case "9":
 					pos9 = "X";
+					System.out.println("Invio al client 2 pos9");
 					out2.println("9");
 					break;
 				case "Esci":
@@ -129,38 +138,47 @@ public class Server implements ActionListener {
 				switch (messaggio2) {
 				case "1":
 					pos1 = "Cerchio";
+					System.out.println("Invio al client 1 pos1");
 					out1.println(pos1);
 					break;
 				case "2":
 					pos2 = "Cerchio";
+					System.out.println("Invio al client 1 pos2");
 					out1.println(pos2);
 					break;
 				case "3":
 					pos3 = "Cerchio";
+					System.out.println("Invio al client 1 pos3");
 					out1.println(pos2);
 					break;
 				case "4":
 					pos4 = "Cerchio";
+					System.out.println("Invio al client 1 pos4");
 					out1.println(pos4);
 					break;
 				case "5":
 					pos5 = "Cerchio";
+					System.out.println("Invio al client 1 pos5");
 					out1.println(pos5);
 					break;
 				case "6":
 					pos6 = "Cerchio";
+					System.out.println("Invio al client 1 pos6");
 					out1.println(pos6);
 					break;
 				case "7":
 					pos7 = "Cerchio";
+					System.out.println("Invio al client 1 pos7");
 					out1.println(pos7);
 					break;
 				case "8":
 					pos8 = "Cerchio";
+					System.out.println("Invio al client 1 pos8");
 					out1.println(pos8);
 					break;
 				case "9":
 					pos9 = "Cerchio";
+					System.out.println("Invio al client 1 pos9");
 					out1.println(pos9);
 					break;
 				case "Esci":
