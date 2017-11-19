@@ -30,6 +30,10 @@ public class Client implements ActionListener, MouseListener{
 	private String nomeServer="localhost";
 	private int portaServer=6789;
 	private Socket s;
+	InputStreamReader isr;
+	BufferedReader in;
+	PrintWriter out;
+	String ricevuto="";
 	
 	public Client (Finestra1 f1, Finestra2 f2){
 		this.f1=f1;
@@ -74,6 +78,9 @@ public class Client implements ActionListener, MouseListener{
 	public void connetti() {
 		try {
 			s=new Socket(nomeServer, portaServer);
+			isr= new InputStreamReader(s.getInputStream());
+			in=new BufferedReader(isr);
+			out=new PrintWriter(s.getOutputStream(), true);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -82,8 +89,6 @@ public class Client implements ActionListener, MouseListener{
 	public String simboloServer(){
 		String sim=null;
 		try {
-			InputStreamReader isr= new InputStreamReader(s.getInputStream());
-			BufferedReader in=new BufferedReader(isr);
 			sim=in.readLine();
 			System.out.println("Il Client riceve simbolo: " + sim);
 		} catch (IOException e) {
@@ -94,19 +99,12 @@ public class Client implements ActionListener, MouseListener{
 	
 	public void comunicaPosizione(String p) {
 		System.out.println("Invio al server posizione " + p + "...");
-		try {
-			PrintWriter out=new PrintWriter(s.getOutputStream(), true);
-			out.println(p);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		out.println(p);
 	}
 	public void riceviPosizione (){
 		String p=null;
 		try {
 			System.out.println("Metodo ricevi posizione");
-			InputStreamReader isr= new InputStreamReader(s.getInputStream());
-			BufferedReader in=new BufferedReader(isr);
 			p=in.readLine();
 			System.out.println("Il Cliet riceve posizione: " + p);
 			switch (p) {
@@ -155,12 +153,7 @@ public class Client implements ActionListener, MouseListener{
 	}
 	public void esci(){
 		System.out.println("Invio al server...");
-		try {
-			PrintWriter out=new PrintWriter(s.getOutputStream(), true);
-			out.println("Esci");
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		out.println("Esci");
 	}
 	
 	public boolean controllaVittoria(){
@@ -240,7 +233,7 @@ public class Client implements ActionListener, MouseListener{
 			}
 		}
 		if (evt.getSource()==f2.getBtnEsci()){
-			//esci();
+			esci();
 			System.exit(1);
 		}
 	}
