@@ -29,7 +29,6 @@ public class Server implements ActionListener {
 	}
 
 	public void start() throws IOException {
-
 		f3.getBtnSpegniServer().addActionListener(this);
 		f3.setVisible(true);
 		try {
@@ -63,7 +62,6 @@ public class Server implements ActionListener {
 			in2 = new BufferedReader(isr2);
 			out2 = new PrintWriter(socket2.getOutputStream(), true);
 			f3.setMod("-> Avviati i flussi input e output");
-			// chiuso = false;
 		} catch (Exception e) {
 			e.printStackTrace();
 			System.exit(1);
@@ -83,171 +81,172 @@ public class Server implements ActionListener {
 				messaggio1 = in1.readLine();
 				System.out.println("Ricevo messaggio1= " + messaggio1);
 				switch (messaggio1) {
-					case "1":
-						pos1 = "X";
-						System.out.println("Invio al client 2 pos1");
-						out2.println("1");
-						f3.setMod("-> Inviato al client 2 pos1");
-						break;
-					case "2":
-						pos2 = "X";
-						System.out.println("Invio al client 2 pos2");
-						out2.println("2");
-						f3.setMod("-> Inviato al client 2 pos2");
-						break;
-					case "3":
-						pos3 = "X";
-						System.out.println("Invio al client 2 pos3");
-						out2.println("3");
-						f3.setMod("-> Inviato al client 2 pos3");
-						break;
-					case "4":
-						pos4 = "X";
-						System.out.println("Invio al client 2 pos4");
-						out2.println("4");
-						f3.setMod("-> Inviato al client 2 pos4");
-						break;
-					case "5":
-						pos5 = "X";
-						System.out.println("Invio al client 2 pos5");
-						out2.println("5");
-						f3.setMod("-> Inviato al client 2 pos5");
-						break;
-					case "6":
-						pos6 = "X";
-						System.out.println("Invio al client 2 pos6");
-						out2.println("6");
-						f3.setMod("-> Inviato al client 2 pos6");
-						break;
-					case "7":
-						pos7 = "X";
-						System.out.println("Invio al client 2 pos7");
-						out2.println("7");
-						f3.setMod("-> Inviato al client 2 pos7");
-						break;
-					case "8":
-						pos8 = "X";
-						System.out.println("Invio al client 2 pos8");
-						out2.println("8");
-						f3.setMod("-> Inviato al client 2 pos8");
-						break;
-					case "9":
-						pos9 = "X";
-						System.out.println("Invio al client 2 pos9");
-						out2.println("9");
-						f3.setMod("-> Inviato al client 2 pos9");
-						break;
-					case "Esci":
-						socket1.close();
-						out2.println("Hai vinto");
-						f3.setMod("-> Socket1 chiuso, partita annullata. Vittoria socket2(Cerchio)");
-						partita = false;
-						break;
-					default:
-						f3.setMod("Errore ricezione!");
-						break;
-					}
+				case "1":
+					pos1 = "X";
+					System.out.println("Invio al client 2 pos1");
+					out2.println("1");
+					f3.setMod("-> Inviato al client 2 pos1");
+					break;
+				case "2":
+					pos2 = "X";
+					System.out.println("Invio al client 2 pos2");
+					out2.println("2");
+					f3.setMod("-> Inviato al client 2 pos2");
+					break;
+				case "3":
+					pos3 = "X";
+					System.out.println("Invio al client 2 pos3");
+					out2.println("3");
+					f3.setMod("-> Inviato al client 2 pos3");
+					break;
+				case "4":
+					pos4 = "X";
+					System.out.println("Invio al client 2 pos4");
+					out2.println("4");
+					f3.setMod("-> Inviato al client 2 pos4");
+					break;
+				case "5":
+					pos5 = "X";
+					System.out.println("Invio al client 2 pos5");
+					out2.println("5");
+					f3.setMod("-> Inviato al client 2 pos5");
+					break;
+				case "6":
+					pos6 = "X";
+					System.out.println("Invio al client 2 pos6");
+					out2.println("6");
+					f3.setMod("-> Inviato al client 2 pos6");
+					break;
+				case "7":
+					pos7 = "X";
+					System.out.println("Invio al client 2 pos7");
+					out2.println("7");
+					f3.setMod("-> Inviato al client 2 pos7");
+					break;
+				case "8":
+					pos8 = "X";
+					System.out.println("Invio al client 2 pos8");
+					out2.println("8");
+					f3.setMod("-> Inviato al client 2 pos8");
+					break;
+				case "9":
+					pos9 = "X";
+					System.out.println("Invio al client 2 pos9");
+					out2.println("9");
+					f3.setMod("-> Inviato al client 2 pos9");
+					break;
+				case "Esci":
+					socket1.close();
+					out2.println("Hai vinto");
+					f3.setMod("-> Socket1 chiuso, partita annullata. Vittoria socket2(Cerchio)");
+					partita = false;
+					break;
+				default:
+					f3.setMod("Errore ricezione!");
+					break;
+				}
+			}
+			this.Controllo_vittoria();
+			if (vittoria == false) {
+				messaggio2 = in2.readLine();
+				System.out.println("Ricevo messaggio2= " + messaggio2);
+				switch (messaggio2) {
+				case "1":
+					pos1 = "Cerchio";
+					System.out.println("Invio al client 1 pos1");
+					out1.println("1");
+					f3.setMod("-> Inviato al client 1 pos1");
+					break;
+				case "2":
+					pos2 = "Cerchio";
+					System.out.println("Invio al client 1 pos2");
+					out1.println("2");
+					f3.setMod("-> Inviato al client 1 pos2");
+					break;
+				case "3":
+					pos3 = "Cerchio";
+					System.out.println("Invio al client 1 pos3");
+					out1.println("3");
+					f3.setMod("-> Inviato al client 1 pos3");
+					break;
+				case "4":
+					pos4 = "Cerchio";
+					System.out.println("Invio al client 1 pos4");
+					out1.println("4");
+					f3.setMod("-> Inviato al client 1 pos4");
+					break;
+				case "5":
+					pos5 = "Cerchio";
+					System.out.println("Invio al client 1 pos5");
+					out1.println("5");
+					f3.setMod("-> Inviato al client 1 pos5");
+					break;
+				case "6":
+					pos6 = "Cerchio";
+					System.out.println("Invio al client 1 pos6");
+					out1.println("6");
+					f3.setMod("-> Inviato al client 1 pos6");
+					break;
+				case "7":
+					pos7 = "Cerchio";
+					System.out.println("Invio al client 1 pos7");
+					out1.println("7");
+					f3.setMod("-> Inviato al client 1 pos7");
+					break;
+				case "8":
+					pos8 = "Cerchio";
+					System.out.println("Invio al client 1 pos8");
+					out1.println("8");
+					f3.setMod("-> Inviato al client 1 pos8");
+					break;
+				case "9":
+					pos9 = "Cerchio";
+					System.out.println("Invio al client 1 pos9");
+					out1.println("9");
+					f3.setMod("-> Inviato al client 1 pos9");
+					break;
+				case "Esci":
+					socket2.close();
+					out1.println("Hai vinto");
+					f3.setMod("-> Socket2 chiuso, partita annullata. Vittoria socket1(X)");
+					partita = false;
+					break;
+				default:
+					f3.setMod("Errore ricezione!");
+					break;
 				}
 				this.Controllo_vittoria();
-				if (vittoria == false) {
-					messaggio2 = in2.readLine();
-					System.out.println("Ricevo messaggio2= " + messaggio2);
-					switch (messaggio2) {
-					case "1":
-						pos1 = "Cerchio";
-						System.out.println("Invio al client 1 pos1");
-						out1.println("1");
-						f3.setMod("-> Inviato al client 1 pos1");
-						break;
-					case "2":
-						pos2 = "Cerchio";
-						System.out.println("Invio al client 1 pos2");
-						out1.println("2");
-						f3.setMod("-> Inviato al client 1 pos2");
-						break;
-					case "3":
-						pos3 = "Cerchio";
-						System.out.println("Invio al client 1 pos3");
-						out1.println("3");
-						f3.setMod("-> Inviato al client 1 pos3");
-						break;
-					case "4":
-						pos4 = "Cerchio";
-						System.out.println("Invio al client 1 pos4");
-						out1.println("4");
-						f3.setMod("-> Inviato al client 1 pos4");
-						break;
-					case "5":
-						pos5 = "Cerchio";
-						System.out.println("Invio al client 1 pos5");
-						out1.println("5");
-						f3.setMod("-> Inviato al client 1 pos5");
-						break;
-					case "6":
-						pos6 = "Cerchio";
-						System.out.println("Invio al client 1 pos6");
-						out1.println("6");
-						f3.setMod("-> Inviato al client 1 pos6");
-						break;
-					case "7":
-						pos7 = "Cerchio";
-						System.out.println("Invio al client 1 pos7");
-						out1.println("7");
-						f3.setMod("-> Inviato al client 1 pos7");
-						break;
-					case "8":
-						pos8 = "Cerchio";
-						System.out.println("Invio al client 1 pos8");
-						out1.println("8");
-						f3.setMod("-> Inviato al client 1 pos8");
-						break;
-					case "9":
-						pos9 = "Cerchio";
-						System.out.println("Invio al client 1 pos9");
-						out1.println("9");
-						f3.setMod("-> Inviato al client 1 pos9");
-						break;
-					case "Esci":
-						socket2.close();
-						out1.println("Hai vinto");
-						f3.setMod("-> Socket2 chiuso, partita annullata. Vittoria socket1(X)");
-						partita = false;
-						break;
-					default:
-						f3.setMod("Errore ricezione!");
-						break;
-					}
-					this.Controllo_vittoria();
-				}
-				if (vittoria == true) {
-					if (vittorioso.equals("X")) {
-						out1.println("Hai vinto");
-						out2.println("Hai perso");
-						f3.setMod("Socket1 (X) ha vinto!!!");
-					} else {
-						out2.println("Hai vinto");
-						out1.println("Hai perso");
-						f3.setMod("Socket2 (Cerchio) ha vinto!!!");
-					}
-					f3.setMod("" + vittorioso + "  Vittoria:" + vittoria);
-					partita = false;
-				}
 			}
-			if (socket1.isClosed() == false && socket2.isClosed() == false) {
-				socket1.close();
-				socket2.close();
-			} else {
-				if (socket1.isClosed() == true && socket2.isClosed() == false) {
-					socket2.close();
+			if (vittoria == true) {
+				if (vittorioso.equals("X")) {
+					out1.println("Hai vinto");
+					out2.println("Hai perso");
+					f3.setMod("Socket1 (X) ha vinto!!!");
+				} else {
+					out2.println("Hai vinto");
+					out1.println("Hai perso");
+					f3.setMod("Socket2 (Cerchio) ha vinto!!!");
 				}
-				if (socket1.isClosed() == false && socket2.isClosed() == true) {
-					socket1.close();
-				}
+				f3.setMod("" + vittorioso + "  Vittoria:" + vittoria);
+				partita = false;
 			}
-			vittoria = false;
-			vittorioso = "";
-			this.richiesta_socket();
 		}
+		if (socket1.isClosed() == false && socket2.isClosed() == false) {
+			socket1.close();
+			socket2.close();
+		} else {
+			if (socket1.isClosed() == true && socket2.isClosed() == false) {
+				socket2.close();
+			}
+			if (socket1.isClosed() == false && socket2.isClosed() == true) {
+				socket1.close();
+			}
+		}
+		vittoria = false;
+		vittorioso = "";
+		this.richiesta_socket();
+	}
+
 	public void Controllo_vittoria() {
 		if (pos1.equals(pos2) && pos1.equals(pos3) && !pos1.equals("")) {
 			vittoria = true;
