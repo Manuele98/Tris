@@ -27,7 +27,7 @@ public class Client implements ActionListener, MouseListener {
 	private ImageIcon iconMia = null;
 	private ImageIcon iconAvversario = null;
 	private boolean vittoria = false;
-	private String nomeServer = "localhost";
+	private String nomeServer = "192.168.4.12";
 	private int portaServer = 6789;
 	private Socket s;
 	InputStreamReader isr;
@@ -146,6 +146,14 @@ public class Client implements ActionListener, MouseListener {
 				f2.getLbl_9().setIcon(iconAvversario);
 				f2.getLbl_9().removeMouseListener(this);
 				break;
+			case "Hai vinto":
+				JOptionPane.showMessageDialog(f2, "Hai vinto", "CONGRATULAZIONI", 0);
+				System.exit(1);
+				break;
+			case "Hai perso":
+				JOptionPane.showMessageDialog(f2, "Hai perso", "PECCATO", 0);
+				System.exit(1);
+				break;
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -154,7 +162,7 @@ public class Client implements ActionListener, MouseListener {
 	}
 
 	public void esci() {
-		System.out.println("Invio al server...");
+		System.out.println("Invio al server uscita...");
 		out.println("Esci");
 	}
 
